@@ -21,10 +21,10 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCS_SA_KEY }}'
 
-     - name: Setup - gcloud / gsutil
-       uses: google-github-actions/setup-gcloud@v0
+      - name: Setup - gcloud / gsutil
+        uses: google-github-actions/setup-gcloud@v0
 
-        run: |-
+      - run: |-
           gsutil rsync -r images gs://$GCS_BUCKET
           
         
