@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-     - id: 'auth'
-      uses: 'google-github-actions/auth@v0'
-      with:
-        credentials_json: '${{ secrets.GCS_SA_KEY }}'
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GCS_SA_KEY }}'
 
      - name: Setup - gcloud / gsutil
        uses: google-github-actions/setup-gcloud@v0
