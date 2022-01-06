@@ -32,7 +32,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0
 
       - run: |-
-          gsutil rsync images gs://$GCS_BUCKET
+          gsutil rsync -d -r images gs://$GCS_BUCKET
           
         
       
