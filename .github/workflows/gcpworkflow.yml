@@ -28,7 +28,7 @@ jobs:
       - name: Setup - gcloud / gsutil
         uses: google-github-actions/setup-gcloud@v0
 
-      - name: sync bucket
+      - name: sync the bucket
         run: |-
           gsutil rsync -r images gs://$GCS_BUCKET
 
