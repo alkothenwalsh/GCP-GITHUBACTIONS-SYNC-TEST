@@ -34,7 +34,7 @@ jobs:
 
       - name: Grant all users public access
         run: |-
-          gsutil acl ch -u AllUsers:R gs://$GCS_BUCKET
+          gsutil -m acl ch -r -u AllUsers:R gs://$GCS_BUCKET
           
         
       
