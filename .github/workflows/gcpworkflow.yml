@@ -28,8 +28,13 @@ jobs:
       - name: Setup - gcloud / gsutil
         uses: google-github-actions/setup-gcloud@v0
 
-      - run: |-
-          gsutil rsync -d -r images gs://$GCS_BUCKET
+      - name: sync bucket
+        run: |-
+          gsutil rsync -r images gs://$GCS_BUCKET
+
+      - name: Grant all users public access
+        run: |-
+          gsutil acl ch -u AllUsers:R gs://$GCS_BUCKET
           
         
       
